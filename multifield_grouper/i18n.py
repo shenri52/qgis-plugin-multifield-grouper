@@ -13,6 +13,7 @@ _FR = {
         "Regrouper les entités par plusieurs champs de catégorie",
     "Each selected category field is evaluated independently, so a feature may belong to several categories. Identifiers are unique within each category. Features with all category fields empty are collected in a special NULL category. Empty identifiers are ignored.":
         "Chaque champ de catégorie sélectionné est analysé indépendamment : une entité peut appartenir à plusieurs catégories. Les identifiants sont uniques dans chaque catégorie. Les entités dont tous les champs de catégorie sont vides sont regroupées dans une catégorie spéciale NULL. Les identifiants vides sont ignorés.",
+    "Select at least one category field.": "Veuillez sélectionner au moins un champ de catégorie.",
     "Input layer": "Couche source",
     "Identifier field": "Champ identifiant",
     "Category fields": "Champs de catégorie",
