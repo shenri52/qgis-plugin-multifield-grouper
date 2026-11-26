@@ -48,5 +48,6 @@ repository=https://github.com/shenri52/qgis-plugin-multifield-grouper
 homepage=https://github.com/shenri52/qgis-plugin-multifield-grouper
 tags=table, grouping, fields, categories, processing
 icon=icon.svg
-experimental=True
+experimental=False
 deprecated=False
+category=Vector
