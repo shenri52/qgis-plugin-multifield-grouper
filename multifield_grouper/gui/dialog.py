@@ -128,7 +128,7 @@ class MultiFieldGrouperDialog(QDialog):
         self.id_combo.addItems(names)
         for name in names:
             item = QListWidgetItem(name, self.category_list)
-            item.setFlags(item.flags() | item.flags().__class__.ItemIsUserCheckable)
+            item.setFlags(item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
             item.setCheckState(Qt.CheckState.Unchecked)
 
     def _output_changed(self, *_):
