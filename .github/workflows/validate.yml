@@ -17,3 +17,7 @@ jobs:
         run: python -m compileall -q multifield_grouper tests
       - name: Run core tests
         run: python -m unittest discover -s tests -v
+      - name: Install Bandit
+        run: python -m pip install --upgrade bandit
+      - name: Run Bandit security scan
+        run: bandit -r multifield_grouper -f txt
