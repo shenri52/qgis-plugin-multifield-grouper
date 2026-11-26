@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from qgis.PyQt.QtCore import QLocale
+from qgis.PyQt.QtCore import QLocale, Qt
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QFormLayout, QLabel, QComboBox,
@@ -129,7 +129,6 @@ class MultiFieldGrouperDialog(QDialog):
         for name in names:
             item = QListWidgetItem(name, self.category_list)
             item.setFlags(item.flags() | item.flags().__class__.ItemIsUserCheckable)
-            from qgis.PyQt.QtCore import Qt
             item.setCheckState(Qt.CheckState.Unchecked)
 
     def _output_changed(self, *_):
@@ -155,7 +154,7 @@ class MultiFieldGrouperDialog(QDialog):
         category_fields = [
             self.category_list.item(i).text()
             for i in range(self.category_list.count())
-            if self.category_list.item(i).checkState()
+            if self.category_list.item(i).checkState() == Qt.CheckState.Checked
         ]
         if not category_fields:
             QMessageBox.warning(self, self.windowTitle(), self.t["need_fields"])
