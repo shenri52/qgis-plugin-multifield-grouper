@@ -60,7 +60,8 @@ Le workflow GitHub Actions construit et joint automatiquement l'archive à chaqu
 
 ### Historique des versions
 
-- **0.1.3** — Traduction automatique de l'interface en français lorsque la langue du système est le français : menu, barre d'outils, fournisseur, boîte à outils Traitements et libellés de l'algorithme. L'anglais reste utilisé pour les autres langues. Aucun changement du fonctionnement du regroupement.\n- **0.1.2** — Correction de la compatibilité des énumérations Qt6 dans la fenêtre graphique et l'algorithme de traitement. Suppression du gestionnaire d'exception trop large signalé par Bandit dans la détection des valeurs vides. Compatibilité QGIS 3.28 conservée.
+- **0.1.3** — Traduction automatique de l'interface en français lorsque la langue du système est le français : menu, barre d'outils, fournisseur, boîte à outils Traitements et libellés de l'algorithme. L'anglais reste utilisé pour les autres langues. Aucun changement du fonctionnement du regroupement.
+- **0.1.2** — Correction de la compatibilité des énumérations Qt6 dans la fenêtre graphique et l'algorithme de traitement. Suppression du gestionnaire d'exception trop large signalé par Bandit dans la détection des valeurs vides. Compatibilité QGIS 3.28 conservée.
 - **0.1.1** — Ajout d'un exemple complet de source et de résultat dans les métadonnées et cette documentation. L'exemple illustre le traitement indépendant des champs de catégorie, le comptage des identifiants uniques et le regroupement des valeurs vides dans `NULL`.
 
 ## English
