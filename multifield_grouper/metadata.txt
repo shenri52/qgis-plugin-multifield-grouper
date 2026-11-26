@@ -36,14 +36,10 @@ about[fr]=Crée une table récapitulative sans géométrie à partir d'un champ 
     NULL | 1 | A04
 
     Chaque champ de catégorie est traité indépendamment. A01 apparaît donc dans Nord et Urbain. Un identifiant n'est compté qu'une seule fois dans chaque catégorie. Les entités dont tous les champs de catégorie sont vides sont regroupées dans NULL.
-changelog=0.1.2: Fixed Qt6 enum compatibility in the graphical dialog and Processing algorithm.
-    Removed the Bandit-reported broad exception handler from empty-value detection.
-    Preserved compatibility with the declared QGIS 3.28 minimum version.
+changelog=0.1.2: Compatibility fix.
     0.1.1: Improved plugin description with a complete input/output example in English.
     The example illustrates independent category grouping, unique identifier counts, and the NULL category for empty values.
-changelog[fr]=0.1.2 : Correction de la compatibilité des énumérations Qt6 dans la fenêtre graphique et l'algorithme de traitement.
-    Suppression du gestionnaire d'exception trop large signalé par Bandit dans la détection des valeurs vides.
-    Maintien de la compatibilité avec la version minimale QGIS 3.28 déclarée.
+changelog[fr]=0.1.2 : Correction de la compatibilité.
     0.1.1 : Amélioration de la description du plugin avec un exemple complet de source et de résultat en français.
     L'exemple illustre le regroupement indépendant des catégories, le comptage des identifiants uniques et la catégorie NULL pour les valeurs vides.
 version=0.1.2
