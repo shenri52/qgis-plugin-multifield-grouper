@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from qgis.PyQt.QtCore import QLocale, Qt
+from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QFormLayout, QLabel, QComboBox,
@@ -13,11 +13,12 @@ from qgis.core import (
 )
 from qgis.PyQt.QtCore import QVariant
 from .. import core
+from ..i18n import is_french
 
 
 TEXT = {
     "fr": {
-        "title": "MultiField Grouper", "intro": "Regroupe les identifiants selon les valeurs de plusieurs champs de catégorie indépendants.",
+        "title": "Regroupement multi-champs", "intro": "Regroupe les identifiants selon les valeurs de plusieurs champs de catégorie indépendants.",
         "layer": "Couche source", "id": "Champ identifiant", "categories": "Champs de catégorie (sélection multiple)",
         "separator": "Séparateur de la liste", "destination": "Destination", "memory": "Couche temporaire",
         "gpkg": "GeoPackage", "csv": "CSV", "file": "Fichier", "browse": "Parcourir…",
@@ -45,7 +46,7 @@ class MultiFieldGrouperDialog(QDialog):
     def __init__(self, iface):
         super().__init__(iface.mainWindow())
         self.iface = iface
-        self.lang = "fr" if QLocale.system().name().lower().startswith("fr") else "en"
+        self.lang = "fr" if is_french() else "en"
         self.t = TEXT[self.lang]
         self.setWindowTitle(self.t["title"])
         icon_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "icon.svg")
