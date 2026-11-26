@@ -20,14 +20,7 @@ def is_empty(value, qgis_null=None):
 
 
 def build_groups(features, id_field, category_fields, qgis_null=None):
-    """
-    Group identifiers independently for every populated category field.
-
-    A feature may therefore belong to several categories. Identifiers are
-    deduplicated within each category. Features with no category value are
-    collected in a dedicated missing-category group. Blank identifiers are
-    ignored. Returns (rows, statistics).
-    """
+    """Return sorted (category, count, identifiers) rows and processing stats."""
     groups = defaultdict(set)
     ignored_ids = 0
     processed = 0
@@ -51,21 +44,23 @@ def build_groups(features, id_field, category_fields, qgis_null=None):
         if not has_category:
             groups[MISSING_CATEGORY].add(identifier)
 
-    # Keep the special empty-category bucket distinct from a literal "NULL".
-    literal_null_exists = MISSING_LABEL in groups
     rows = []
     keys = sorted(
         (key for key in groups if key is not MISSING_CATEGORY),
-        key=lambda value: value.casefold()
+        key=lambda value: (value.casefold(), value)
     )
     for category in keys:
-        label = category
-        if category == MISSING_LABEL and MISSING_CATEGORY in groups:
-            label = "NULL (texte)"
-        rows.append((label, len(groups[category]), sorted(groups[category])))
+        rows.append((category, len(groups[category]), sorted(groups[category])))
 
     if MISSING_CATEGORY in groups:
-        missing_label = "NULL (valeurs vides)" if literal_null_exists else MISSING_LABEL
+        # Keep a literal category named "NULL" distinct from missing values.
+        missing_label = MISSING_LABEL
+        if MISSING_LABEL in groups:
+            missing_label = "NULL (valeurs vides)"
+            suffix = 2
+            while missing_label in groups:
+                missing_label = "NULL (valeurs vides {0})".format(suffix)
+                suffix += 1
         rows.append((missing_label, len(groups[MISSING_CATEGORY]),
                      sorted(groups[MISSING_CATEGORY])))
 
