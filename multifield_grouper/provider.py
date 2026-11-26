@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from qgis.core import QgsProcessingProvider
+
+from .i18n import tr
 from .algorithms.regroupement import MultiFieldGroupingAlgorithm
 
 
@@ -11,7 +13,7 @@ class MultiFieldGrouperProvider(QgsProcessingProvider):
         return "multifield_grouper"
 
     def name(self):
-        return "MultiField Grouper"
+        return tr("MultiField Grouper")
 
     def longName(self):
         return self.name()
