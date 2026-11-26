@@ -36,13 +36,15 @@ about[fr]=Crée une table récapitulative sans géométrie à partir d'un champ 
     NULL | 1 | A04
 
     Chaque champ de catégorie est traité indépendamment. A01 apparaît donc dans Nord et Urbain. Un identifiant n'est compté qu'une seule fois dans chaque catégorie. Les entités dont tous les champs de catégorie sont vides sont regroupées dans NULL.
-changelog=0.1.2: Compatibility fix.
+changelog=0.1.3: Added automatic French interface labels when the system locale is French; English remains the default for other locales.
+    0.1.2: Compatibility fix.
     0.1.1: Improved plugin description with a complete input/output example in English.
     The example illustrates independent category grouping, unique identifier counts, and the NULL category for empty values.
-changelog[fr]=0.1.2 : Correction de la compatibilité.
+changelog[fr]=0.1.3 : Ajout de la traduction automatique de l'interface en français lorsque la langue du système est le français ; l'anglais reste utilisé pour les autres langues.
+    0.1.2 : Correction de la compatibilité.
     0.1.1 : Amélioration de la description du plugin avec un exemple complet de source et de résultat en français.
     L'exemple illustre le regroupement indépendant des catégories, le comptage des identifiants uniques et la catégorie NULL pour les valeurs vides.
-version=0.1.2
+version=0.1.3
 author=shenri52
 email=shenri.hmn@gmail.com
 tracker=https://github.com/shenri52/qgis-plugin-multifield-grouper/issues
