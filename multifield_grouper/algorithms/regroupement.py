@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from qgis.PyQt.QtCore import QCoreApplication, QVariant
 from qgis.core import (
-    NULL, QgsProcessing, QgsProcessingAlgorithm,
+    NULL, QgsProcessing, QgsProcessingAlgorithm, QgsProcessingException,
     QgsProcessingParameterVectorLayer, QgsProcessingParameterField,
     QgsProcessingParameterString, QgsProcessingParameterFeatureSink,
     QgsFields, QgsField, QgsFeature, QgsWkbTypes,
@@ -36,12 +36,10 @@ class MultiFieldGroupingAlgorithm(QgsProcessingAlgorithm):
 
     def shortHelpString(self):
         return self.tr(
-            "For each populated value found in any selected category field, "
-            "create one row containing the sorted unique identifiers. Each "
-            "category field is evaluated independently, so a feature may be "
-            "included in several categories. Features with all category "
-            "fields empty are collected in a NULL category. Empty identifiers "
-            "are ignored."
+            "Each selected category field is evaluated independently, so a "
+            "feature may belong to several categories. Identifiers are unique "
+            "within each category. Features with all category fields empty "
+            "are collected in a special NULL category. Empty identifiers are ignored."
         )
 
     def initAlgorithm(self, config=None):
