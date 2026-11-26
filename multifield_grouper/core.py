@@ -12,10 +12,11 @@ def is_empty(value, qgis_null=None):
         return True
     if qgis_null is not None:
         try:
-            if value == qgis_null:
-                return True
-        except Exception:
-            pass
+            is_qgis_null = value == qgis_null
+        except (TypeError, ValueError):
+            is_qgis_null = False
+        if is_qgis_null:
+            return True
     return str(value).strip() == ""
 
 
