@@ -1,11 +1,11 @@
 # MultiField Grouper
 
 [![QGIS](https://img.shields.io/badge/QGIS-3.28%2B-green)](https://qgis.org/)
-[![Version](https://img.shields.io/badge/version-0.1.1-blue)](https://github.com/shenri52/qgis-plugin-multifield-grouper/releases)
+[![Version](https://img.shields.io/badge/version-0.1.2-blue)](https://github.com/shenri52/qgis-plugin-multifield-grouper/releases)
 
 ## Français
 
-**MultiField Grouper 0.1.1** crée une table récapitulative sans géométrie à partir d'un champ identifiant et de plusieurs champs de catégorie indépendants. Il est accessible depuis le menu **Extensions** et depuis la boîte à outils **Traitements** de QGIS.
+**MultiField Grouper 0.1.2** crée une table récapitulative sans géométrie à partir d'un champ identifiant et de plusieurs champs de catégorie indépendants. Il est accessible depuis le menu **Extensions** et depuis la boîte à outils **Traitements** de QGIS.
 
 ### Exemple
 
@@ -60,11 +60,12 @@ Le workflow GitHub Actions construit et joint automatiquement l'archive à chaqu
 
 ### Historique des versions
 
+- **0.1.2** — Correction de la compatibilité des énumérations Qt6 dans la fenêtre graphique et l'algorithme de traitement. Suppression du gestionnaire d'exception trop large signalé par Bandit dans la détection des valeurs vides. Compatibilité QGIS 3.28 conservée.
 - **0.1.1** — Ajout d'un exemple complet de source et de résultat dans les métadonnées et cette documentation. L'exemple illustre le traitement indépendant des champs de catégorie, le comptage des identifiants uniques et le regroupement des valeurs vides dans `NULL`.
 
 ## English
 
-**MultiField Grouper 0.1.1** creates a non-spatial summary table from one identifier field and several independent category fields. It is available from the QGIS **Plugins** menu and the **Processing** toolbox.
+**MultiField Grouper 0.1.2** creates a non-spatial summary table from one identifier field and several independent category fields. It is available from the QGIS **Plugins** menu and the **Processing** toolbox.
 
 ### Example
 
@@ -119,6 +120,7 @@ The GitHub Actions workflow builds and attaches the archive to every published R
 
 ### Version history
 
+- **0.1.2** — Fixed Qt6 enum compatibility in the graphical dialog and Processing algorithm. Removed the broad exception handler reported by Bandit from empty-value detection. QGIS 3.28 compatibility is preserved.
 - **0.1.1** — Added a complete input/output example to the plugin metadata and this documentation. The example demonstrates independent category-field processing, unique identifier counts, and grouping empty values in `NULL`.
 
 ## License
