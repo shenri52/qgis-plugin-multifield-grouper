@@ -52,7 +52,7 @@ class MultiFieldGroupingAlgorithm(QgsProcessingAlgorithm):
         return self.tr("Each selected category field is evaluated independently, so a feature may belong to several categories. Identifiers are unique within each category. Features with all category fields empty are collected in a special NULL category. Empty identifiers are ignored.")
 
     def initAlgorithm(self, config=None):
-        self.addParameter(QgsProcessingParameterVectorLayer(self.INPUT, self.tr("Input layer"), types=[QgsProcessing.TypeVector]))
+        self.addParameter(QgsProcessingParameterVectorLayer(self.INPUT, self.tr("Input layer"), types=[QgsProcessing.SourceType.TypeVector]))
         self.addParameter(QgsProcessingParameterField(self.FIELD_ID, self.tr("Identifier field"), parentLayerParameterName=self.INPUT))
         self.addParameter(QgsProcessingParameterField(self.CATEGORY_FIELDS, self.tr("Category fields"), parentLayerParameterName=self.INPUT, allowMultiple=True))
         self.addParameter(QgsProcessingParameterString(self.SEPARATOR, self.tr("Identifier list separator"), defaultValue=", "))
@@ -73,7 +73,7 @@ class MultiFieldGroupingAlgorithm(QgsProcessingAlgorithm):
         fields.append(QgsField("categorie", QVariant.String))
         fields.append(QgsField("nb_elements", QVariant.Int))
         fields.append(QgsField("elements", QVariant.String))
-        sink, destination = self.parameterAsSink(parameters, self.OUTPUT, context, fields, QgsWkbTypes.NoGeometry, layer.crs())
+        sink, destination = self.parameterAsSink(parameters, self.OUTPUT, context, fields, QgsWkbTypes.Type.NoGeometry, layer.crs())
         if sink is None:
             raise QgsProcessingException(self.tr("Could not create the output table."))
 
