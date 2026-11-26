@@ -13,6 +13,7 @@
 - Les identifiants sont dédupliqués à l'intérieur de chaque catégorie.
 - Les identifiants vides sont ignorés.
 - Si tous les champs de catégorie sont vides, l'identifiant est placé dans une catégorie spéciale `NULL`.
+- Si une catégorie contient déjà le texte `NULL`, les valeurs réellement vides sont distinguées sous le libellé `NULL (valeurs vides)`.
 - Les catégories sont triées alphabétiquement et les identifiants sont triés dans chaque liste.
 - Les espaces en début et en fin des identifiants et des catégories sont supprimés.
 
@@ -43,6 +44,7 @@ Le workflow GitHub Actions construit et joint automatiquement l'archive à chaqu
 - Identifiers are deduplicated within each category.
 - Empty identifiers are ignored.
 - If every category field is empty, the identifier is assigned to a special `NULL` category.
+- If a real category already contains the text `NULL`, empty values are distinguished as `NULL (valeurs vides)`.
 - Categories and identifiers are sorted alphabetically.
 - Leading and trailing whitespace is stripped from identifiers and category values.
 
