@@ -1,0 +1,26 @@
+name: Build QGIS Plugin ZIP
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build clean QGIS plugin archive
+        run: |
+          zip -r multifield_grouper.zip multifield_grouper \
+            -x "*.git*" "*__pycache__*" "*.pyc" "*.pyo"
+
+      - name: Attach ZIP to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: multifield_grouper.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
