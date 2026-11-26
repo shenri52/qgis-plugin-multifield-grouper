@@ -10,13 +10,8 @@ def is_empty(value, qgis_null=None):
     """Return True for None, QGIS NULL, and whitespace-only values."""
     if value is None:
         return True
-    if qgis_null is not None:
-        try:
-            is_qgis_null = value == qgis_null
-        except (TypeError, ValueError):
-            is_qgis_null = False
-        if is_qgis_null:
-            return True
+    if qgis_null is not None and value == qgis_null:
+        return True
     return str(value).strip() == ""
 
 
