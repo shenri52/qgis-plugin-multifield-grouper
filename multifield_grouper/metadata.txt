@@ -1,0 +1,18 @@
+[general]
+name=MultiField Grouper
+qgisMinimumVersion=3.28
+qgisMaximumVersion=3.99
+description=Groups unique feature identifiers by values found in several category fields.
+description[fr]=Regroupe les identifiants uniques selon les valeurs trouvées dans plusieurs champs de catégorie.
+about=Create a non-spatial summary table from one identifier field and several independent category fields. Available as a graphical tool and a Processing algorithm.
+about[fr]=Crée une table récapitulative sans géométrie à partir d'un champ identifiant et de plusieurs champs de catégorie indépendants. Disponible dans une fenêtre graphique et dans la boîte à outils Traitements.
+version=0.1.0
+author=shenri52
+email=shenri.hmn@gmail.com
+tracker=https://github.com/shenri52/qgis-plugin-multifield-grouper/issues
+repository=https://github.com/shenri52/qgis-plugin-multifield-grouper
+homepage=https://github.com/shenri52/qgis-plugin-multifield-grouper
+tags=table, grouping, fields, categories, processing
+icon=icon.svg
+experimental=True
+deprecated=False
