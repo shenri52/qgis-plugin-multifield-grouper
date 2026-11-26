@@ -197,7 +197,7 @@ class MultiFieldGrouperDialog(QDialog):
                     options.layerOptions = ["GEOMETRY=AS_WKT"]
                 error, message, output_path, _ = QgsVectorFileWriter.writeAsVectorFormatV3(
                     result, path, QgsProject.instance().transformContext(), options)
-                if error != QgsVectorFileWriter.NoError:
+                if error != QgsVectorFileWriter.WriterError.NoError:
                     raise RuntimeError(message)
                 saved = QgsVectorLayer(output_path, os.path.splitext(os.path.basename(path))[0], "ogr")
                 if saved.isValid():
